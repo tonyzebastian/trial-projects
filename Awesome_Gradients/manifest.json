@@ -1,0 +1,19 @@
+{
+  "name": "Awesome Gradient",
+  "id": "1469621209935630379",
+  "api": "1.0.0",
+  "main": "./code.js",
+  "ui": "./dist/ui.html", 
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma",
+    "figjam"
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}

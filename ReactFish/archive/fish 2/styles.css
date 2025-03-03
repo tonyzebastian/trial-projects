@@ -1,0 +1,13 @@
+body {
+    background: #e0f7ff;
+    margin: 0;
+    overflow: hidden;
+}
+
+.fish {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    transition: transform 0.05s linear; /* Make rotation smoother */
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root {
+            --dark-color:#077BED;
+            --light-color:#FDA4D4;
+        }
+
+        svg {
+            cursor: pointer;
+        }
+
+        #darkGroup {
+            fill: var(--dark-color);
+        }
+
+        #lightGroup {
+            fill: var(--light-color);
+        }
+
+        #light_1,
+        #dark_1,
+        #dark_2 {
+            transition: all 1s ease;
+        }
+
+        #dark_2{
+            transform: translateX(-100%);
+        }
+
+        svg:hover #light_1{
+            transform: translateX(20%);
+        }
+
+        svg:hover #dark_1{
+            transform: translateX(40%);
+            opacity: 0;
+        }
+        svg:hover #dark_2{
+            transform: translateX(0%);
+        }
+
+    </style>
+</head>
+<body>
+    <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="triangles" clip-path="url(#clip0_197_22383)">
+            <g id="lightGroup">
+                <g id="light_1" style="mix-blend-mode:multiply">
+                <path d="M56.5 49.134C57.1667 49.5189 57.1667 50.4811 56.5 50.866L11.5 76.8468C10.8333 77.2317 10 76.7506 10 75.9808L10 24.0192C10 23.2494 10.8333 22.7683 11.5 23.1532L56.5 49.134Z" />
+                </g>
+                <g id="darkGroup">
+                <path id="dark_1" d="M82.5 49.134C83.1667 49.5189 83.1667 50.4811 82.5 50.866L37.5 76.8468C36.8333 77.2317 36 76.7506 36 75.9808L36 24.0192C36 23.2494 36.8333 22.7683 37.5 23.1532L82.5 49.134Z" />
+                <path id="dark_2" d="M56.5 49.134C57.1667 49.5189 57.1667 50.4811 56.5 50.866L11.5 76.8468C10.8333 77.2317 10 76.7506 10 75.9808L10 24.0192C10 23.2494 10.8333 22.7683 11.5 23.1532L56.5 49.134Z" />
+                </g>
+            </g>
+        </g>
+        <defs>
+        <clipPath id="clip0_197_22383">
+        <rect width="120" height="100" fill="white"/>
+        </clipPath>
+        </defs>
+    </svg>
+    
+</body>
+</html>

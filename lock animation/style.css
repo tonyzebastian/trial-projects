@@ -1,0 +1,61 @@
+:root {
+    --gradient-start: #E6F0FF;
+    --gradient-end: #FFE8F5;
+    --stroke:#212121;
+}
+
+@keyframes hoverCircle {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes clickCircle {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+#Circle_0,
+#Circle_1,
+#Circle_2,
+#Circle_3,
+#Circle_4
+{
+    transform-origin: center;
+}
+
+svg:hover #Circle_0:not(.clicked),
+svg:hover #Circle_1:not(.clicked),
+svg:hover #Circle_2:not(.clicked),
+svg:hover #Circle_3:not(.clicked),
+svg:hover #Circle_4:not(.clicked)
+{
+    animation: hoverCircle 0.3s ease-out forwards;
+}
+
+svg:active #Circle_0:not(.clicked),
+svg:active #Circle_2:not(.clicked),
+svg:active #Circle_3:not(.clicked),
+svg:active #Circle_4:not(.clicked)
+{
+    animation: clickCircle 0.5s ease-out forwards;
+}
+
+#Circle_0.clicked,
+#Circle_1.clicked,
+#Circle_2.clicked,
+#Circle_3.clicked,
+#Circle_4.clicked
+ {
+    transform: scale(1.5);
+    opacity: 0;
+}
