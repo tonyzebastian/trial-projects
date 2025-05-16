@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fluid Gradient Card</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000; /* Dark background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    .card {
+      width: 320px;
+      height: 440px;
+      border-radius: 20px;
+      padding: 24px;
+      color: white;
+      background:
+        radial-gradient(circle at 30% 40%, #00ff66, transparent 60%),
+        radial-gradient(circle at 70% 60%, #00fff0, transparent 60%),
+        radial-gradient(circle at 50% 90%, #ffff66, transparent 60%);
+      background-blend-mode: screen;
+      box-shadow: 0 0 60px rgba(0, 255, 100, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 0 0 10px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin: 0 0 20px;
+      color: #ccc;
+    }
+
+    a {
+      font-size: 0.85rem;
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="content">
+      <h2>Easy payment links</h2>
+      <p>Generate and share custom payment links for instant payments, anywhere.</p>
+      <a href="#">Learn more</a>
+    </div>
+  </div>
+</body>
+</html>

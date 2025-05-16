@@ -1,0 +1,163 @@
+/* Base styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+/* Button styles */
+.animated-outline-split-button {
+    --offset: 1px;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Animated border gradient */
+.animated-outline-split-button::before {
+    content: '';
+    background: conic-gradient(transparent 270deg, var(--gradient-color), transparent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    width: 100%;
+    animation: rotate 4s linear infinite;
+    z-index: 0;
+}
+
+/* Inner background */
+.animated-outline-split-button::after {
+    content: '';
+    position: absolute;
+    inset: var(--offset);
+    border-radius: inherit;
+    background: linear-gradient(90deg, #E6F0FF 0%, #FFE9F5 100%);
+    z-index: 0;
+    transition: background 0.4s ease;
+}
+
+.animated-outline-split-button:hover::after {
+    background: linear-gradient(90deg, #d9e6ff 0%, #ffdff2 100%);
+}
+
+/* Main button and menu button shared styles */
+.btn {
+    background: transparent;
+    border: none;
+    color: var(--theme-text-color);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+}
+
+.btn:hover::before {
+    opacity: 0.1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Main button specific styles */
+.animated-outline-split-button__main {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* Menu button specific styles */
+.animated-outline-split-button__menu {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 8px 16px;
+    position: relative;
+}
+
+.animated-outline-split-button__menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background-color: var(--theme-text-color);
+    opacity: 0.2;
+}
+
+/* Theme styles */
+/* PPP Light theme */
+:root[data-theme='ppp_light'] {
+    --gradient-color: #00439D;
+    --theme-icon-color: #00439D;
+    --theme-text-color: #00439D;
+}
+
+:root[data-theme='ppp_light'] .animated-outline-split-button::after {
+    background: linear-gradient(90deg, #E6F0FF 0%, #FFE9F5 100%);
+}
+
+:root[data-theme='ppp_light'] .animated-outline-split-button:hover::after {
+    background: linear-gradient(90deg, #d9e6ff 0%, #ffdff2 100%);
+}
+
+/* Basic Light theme */
+:root[data-theme='basic_light'] {
+    --gradient-color: #097BED;
+    --theme-icon-color: #212121;
+    --theme-text-color: #212121;
+}
+
+:root[data-theme='basic_light'] .animated-outline-split-button::after {
+    background: #F2F2F2;
+}
+
+:root[data-theme='basic_light'] .animated-outline-split-button:hover::after {
+    background: #e8e8e8;
+}
+
+/* PPP Dark theme */
+:root[data-theme='ppp_dark'] {
+    --gradient-color: #ADCDFB;
+    --theme-icon-color: #FFFFFF;
+    --theme-text-color: #FFFFFF;
+}
+
+:root[data-theme='ppp_dark'] body {
+    background: #333;
+}
+
+:root[data-theme='ppp_dark'] .animated-outline-split-button::after {
+    background: linear-gradient(90deg, #00204C 0%, #4F002D 100%);
+}
+
+:root[data-theme='ppp_dark'] .animated-outline-split-button:hover::after {
+    background: linear-gradient(90deg, #002b66 0%, #660d3d 100%);
+}
+
+/* Animation */
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) scale(1) rotate(0turn);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1) rotate(1turn);
+    }
+}
